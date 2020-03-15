@@ -1,10 +1,13 @@
 package com.sap.librarydemo.models.service;
 
 import com.sap.librarydemo.models.dao.AdminDaoImpl;
+import com.sap.librarydemo.models.dao.BookDao;
 import com.sap.librarydemo.models.dao.BookDaoImpl;
 import com.sap.librarydemo.models.entity.Admin;
 import com.sap.librarydemo.models.entity.Book;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -14,9 +17,13 @@ public class LibraryServiceImpl implements LibraryService {
     public BookDaoImpl bdi = new BookDaoImpl();
     List<Admin> admList = adi.getAdminList();
     List<Book> booklist = bdi.getAllList();
-    Book book = new Book();
 
-    private Book book;
+    private final BookDao bookDao;
+    public LibraryServiceImpl(BookDao bookDao) {
+        this.bookDao = bookDao;
+    }
+
+
 
     /**
      * 登录
@@ -87,6 +94,8 @@ public class LibraryServiceImpl implements LibraryService {
      * @param keyword or bookCount
      * @return
      */
+
+
     @Override
     public Book findOne(String filed, String keyword) {
         for (Book curbook : booklist) {

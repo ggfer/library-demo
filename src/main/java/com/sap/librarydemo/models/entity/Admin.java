@@ -6,10 +6,13 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 
 @Data
 @AllArgsConstructor
+@Entity
+@Table(name = "user")
 public class Admin {
 
     private int no;   //序号

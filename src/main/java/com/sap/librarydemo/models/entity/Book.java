@@ -2,17 +2,35 @@ package com.sap.librarydemo.models.entity;
 
 import lombok.*;
 
+import javax.persistence.*;
+import java.io.Serializable;
+
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Builder
-public class Book {
+@Entity
+@Table(name = "book")
+public class Book implements Serializable {
+
+    private static final long serialVersionUID = 4071123734063333268L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
+
+    @Column(name = "ISBN")
     private String ISBN;
+
+    @Column(name = "BOOK_NAME")
     private String bookName;
+
+    @Column(name = "AUTHOR")
     private String author;
+
+    @Column(name = "BOOK_COUNT")
+    private int bookCount;
+
 //    private int pageNum; //总页数
 //    private String publisher; //出版社
-    private int bookCount;
 
     @Override
     public String toString() {

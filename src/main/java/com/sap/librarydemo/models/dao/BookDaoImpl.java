@@ -6,35 +6,38 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * issue from i530923:这个类是否需要继承接口
+ */
 
-public class BookDaoImpl implements BookDao {
+public abstract class BookDaoImpl implements BookDao {
     List<Book> booklist;
 
     public BookDaoImpl(){
         booklist  = new ArrayList<Book>();
     }
 
-    public void init() {
-        Book book1 = new Book().builder()
-                .ISBN("0001")
-                .bookName("JavaScript高级程序设计")
-                .author("Nicholas")
-                .build();
-        Book book2 = new Book().builder()
-                .ISBN("0002")
-                .bookName("Head First jQuery")
-                .author("Ryan")
-                .build();
-        Book book3 = new Book().builder()
-                .ISBN("0003")
-                .bookName("JavaScript DOM编程艺术")
-                .author("Jeremy")
-                .build();
-        booklist.add(book1);
-        booklist.add(book2);
-        booklist.add(book3);
-
-    }
+//    public void init() {
+//        Book book1 = new Book().builder()
+//                .ISBN("0001")
+//                .bookName("JavaScript高级程序设计")
+//                .author("Nicholas")
+//                .build();
+//        Book book2 = new Book().builder()
+//                .ISBN("0002")
+//                .bookName("Head First jQuery")
+//                .author("Ryan")
+//                .build();
+//        Book book3 = new Book().builder()
+//                .ISBN("0003")
+//                .bookName("JavaScript DOM编程艺术")
+//                .author("Jeremy")
+//                .build();
+//        booklist.add(book1);
+//        booklist.add(book2);
+//        booklist.add(book3);
+//
+//    }
 
     @Override
     public List<Book> getAllList() {
