@@ -1,16 +1,18 @@
 package com.sap.librarydemo.models.dao;
 
 import com.sap.librarydemo.models.entity.Book;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class BookDaoImpl implements BookDao {
-    List<Book> booklist = new ArrayList<Book>();
 
-//    public BookDaoImpl(){
-//        booklist  = new ArrayList<Book>();
-//    }
+public class BookDaoImpl implements BookDao {
+    List<Book> booklist;
+
+    public BookDaoImpl(){
+        booklist  = new ArrayList<Book>();
+    }
 
     public void init() {
         Book book1 = new Book().builder()

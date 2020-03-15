@@ -1,11 +1,15 @@
 package com.sap.librarydemo.models.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.persistence.Entity;
 
-@Getter
-@Setter
+
+@Data
+@AllArgsConstructor
 public class Admin {
 
     private int no;   //序号
@@ -13,12 +17,6 @@ public class Admin {
     private String adminPwd;//用户密码
 
 
-    public Admin(int no, String adminId, String adminPwd) {
-        super();
-        this.no = no;
-        this.adminId = adminId;
-        this.adminPwd = adminPwd;
-    }
 
     @Override
     public String toString() {

@@ -4,9 +4,11 @@ import com.sap.librarydemo.models.dao.AdminDaoImpl;
 import com.sap.librarydemo.models.dao.BookDaoImpl;
 import com.sap.librarydemo.models.entity.Admin;
 import com.sap.librarydemo.models.entity.Book;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class LibraryServiceImpl implements LibraryService {
     public AdminDaoImpl adi = new AdminDaoImpl();
     public BookDaoImpl bdi = new BookDaoImpl();
@@ -14,6 +16,7 @@ public class LibraryServiceImpl implements LibraryService {
     List<Book> booklist = bdi.getAllList();
     Book book = new Book();
 
+    private Book book;
 
     /**
      * 登录
@@ -24,10 +27,8 @@ public class LibraryServiceImpl implements LibraryService {
      */
     @Override
     public boolean Admin(String adminid, String adminpwd) {
-        for (int i = 0; i < admList.size(); i++) {
-            Admin adtemp = admList.get(i);
-            if (adminid.equals(adtemp.getAdminId())
-                    && adminpwd.equals(adtemp.getAdminPwd())) {
+        for (Admin admin : admList) {
+            if (adminid.equals(admin.getAdminId()) && adminpwd.equals(admin.getAdminPwd())) {
                 System.out.println("信息正确，已经进入系统!");
                 return true;
             } else {
