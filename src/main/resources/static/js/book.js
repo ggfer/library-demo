@@ -22,8 +22,8 @@ $(document).ready(function() {
       data: JSON.stringify(dummy),
       contentType: 'application/json; charset=utf-8',
       traditional: true,
-      success: function(data) {
-        console.log(data);
+      success: function(result) {
+        console.log(result);
         // $('.show-content').html(result);
       }
     });

@@ -17,16 +17,16 @@ public class Book implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @Column(name = "ISBN")
+    @Column(name = "isbn")
     private String ISBN;
 
-    @Column(name = "BOOK_NAME")
+    @Column(name = "book_name")
     private String bookName;
 
-    @Column(name = "AUTHOR")
+    @Column(name = "author")
     private String author;
 
-    @Column(name = "BOOK_COUNT")
+    @Column(name = "book_count")
     private int bookCount;
 
 //    private int pageNum; //总页数
