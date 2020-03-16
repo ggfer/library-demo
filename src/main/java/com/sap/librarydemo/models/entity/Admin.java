@@ -5,25 +5,33 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.io.Serializable;
+
 
 
 @Data
 @AllArgsConstructor
 @Entity
 @Table(name = "user")
-public class Admin {
+public class Admin implements Serializable {
 
-    private int no;   //序号
+    private static final long serialVersionUID = 1529915847634716038L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long uuid;
+
+    @Column(name = "ADMIN_ID")
     private String adminId; //用户名
+    @Column(name = "ADMIN_PASSWORD")
     private String adminPwd;//用户密码
 
 
 
     @Override
     public String toString() {
-        return "Admin [no=" + no + ", adminId=" + adminId + ", adminPwd=" + adminPwd + "]";
+        return "Admin [id=" + uuid + ", adminId=" + adminId + ", adminPwd=" + adminPwd + "]";
     }
     public Admin() {
         super();
