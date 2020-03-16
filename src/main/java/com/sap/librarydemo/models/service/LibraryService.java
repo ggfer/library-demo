@@ -11,9 +11,7 @@ public interface LibraryService {
 
     public List<Book> findAll();
 
-    public Page<Book> findAll(Pageable pageable);
-
-    public void save(Book cliente);
+    public void save(Book book);
 
     public Book findOne(Long id);
 

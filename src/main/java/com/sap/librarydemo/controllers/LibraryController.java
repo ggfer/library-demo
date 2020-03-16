@@ -8,10 +8,9 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
+import java.net.URISyntaxException;
 import java.util.List;
 
 @Controller
@@ -22,13 +21,14 @@ public class LibraryController {
         this.libraryService = libraryService;
     }
 
-    @RequestMapping("/index")
+    @GetMapping("/*")
     String index() {
+        System.out.println("进入主页");
         return "index";
     }
 
-    @RequestMapping(value = "/index", method = RequestMethod.POST)
-    public Boolean postFunction1(@RequestParam Book book, Model model) {
+    @PostMapping(path = "/index")
+    public Boolean postFunction1(@RequestBody Book book) throws URISyntaxException {
         try {
             libraryService.save(book);
         } catch (Exception e) {

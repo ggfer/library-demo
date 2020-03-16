@@ -1,11 +1,7 @@
 package com.sap.librarydemo.models.service;
 
 import com.sap.librarydemo.models.dao.BookDao;
-import com.sap.librarydemo.models.entity.Admin;
 import com.sap.librarydemo.models.entity.Book;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,10 +9,6 @@ import java.util.List;
 
 @Service
 public class LibraryServiceImpl implements LibraryService {
-//    public AdminDaoImpl adi = new AdminDaoImpl();
-//    public BookDaoImpl bdi = new BookDaoImpl();
-//    List<Admin> admList = adi.getAdminList();
-//    List<Book> booklist = bdi.getAllList();
 
     private final BookDao bookDao;
     public LibraryServiceImpl(BookDao bookDao) {
@@ -28,6 +20,7 @@ public class LibraryServiceImpl implements LibraryService {
     public List<Book> findAll() {
         return (List<Book>)bookDao.findAll();
     }
+
 
     @Transactional
     @Override
@@ -47,10 +40,6 @@ public class LibraryServiceImpl implements LibraryService {
         bookDao.deleteById(id);
     }
 
-    @Override
-    public Page<Book> findAll(Pageable pageable) {
-        return bookDao.findAll(pageable);
-    }
 
 
 //
