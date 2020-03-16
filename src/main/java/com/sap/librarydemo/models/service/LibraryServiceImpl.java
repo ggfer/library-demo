@@ -1,6 +1,5 @@
 package com.sap.librarydemo.models.service;
 
-import com.sap.librarydemo.models.dao.AdminDaoImpl;
 import com.sap.librarydemo.models.dao.BookDao;
 import com.sap.librarydemo.models.entity.Admin;
 import com.sap.librarydemo.models.entity.Book;

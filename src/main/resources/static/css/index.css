@@ -1,0 +1,22 @@
+.wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.left,
+.right,
+.middle {
+  height: auto;
+}
+.left {
+  width: 800px;
+  background: coral;
+}
+.right {
+  width: 800px;
+  background: lightblue;
+}
+.middle {
+  background: #555;
+  width: 100%;
+  margin: 0 20px;
+}

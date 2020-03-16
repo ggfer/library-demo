@@ -1,10 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
     <title>Title</title>
-</head>
-<body>
-我借我发
-</body>
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/book.js"></script>
+    <link rel="stylesheet" href="/css/index.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="left"></div>
+      <div class="middle">
+        <div>
+          <p class="post-field">post</p>
+          <p>
+            <button id="fun1">存所有书</button>
+            <button id="fun2">存单本</button>
+          </p>
+          <p>
+            <button id="fun3">取所有书</button>
+            <button id="fun4">取单本</button>
+          </p>
+          <p class="get-field">get</p>
+          <p>
+            <button id="fun5">存所有书</button>
+            <button id="fun6">存单本</button>
+          </p>
+          <p>
+            <button id="fun7">取所有书</button>
+            <button id="fun8">取单本</button>
+          </p>
+        </div>
+        <div class="show-content">结果显示</div>
+      </div>
+      <div class="right">右侧</div>
+    </div>
+  </body>
 </html>

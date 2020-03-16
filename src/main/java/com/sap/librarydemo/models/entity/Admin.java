@@ -13,14 +13,14 @@ import java.io.Serializable;
 @Data
 @AllArgsConstructor
 @Entity
-@Table(name = "user")
+@Table(name = "admin")
 public class Admin implements Serializable {
 
     private static final long serialVersionUID = 1529915847634716038L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long uuid;
+    private long id;
 
     @Column(name = "ADMIN_ID")
     private String adminId; //用户名
@@ -31,7 +31,7 @@ public class Admin implements Serializable {
 
     @Override
     public String toString() {
-        return "Admin [id=" + uuid + ", adminId=" + adminId + ", adminPwd=" + adminPwd + "]";
+        return "Admin [adminId=" + adminId + ", adminPwd=" + adminPwd + "]";
     }
     public Admin() {
         super();

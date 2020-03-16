@@ -2,6 +2,8 @@ package com.sap.librarydemo.controllers;
 
 
 import com.sap.librarydemo.models.entity.Book;
+import com.sap.librarydemo.models.service.LibraryService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +13,11 @@ import java.util.List;
 
 @Controller
 public class HelloController {
+
+    private final LibraryService libraryService;
+    public HelloController(LibraryService libraryService) {
+        this.libraryService = libraryService;
+    }
 
     @RequestMapping("/hello")
     public String helloThymeleaf(Model model) {
@@ -34,7 +41,9 @@ public class HelloController {
 //        booklist.add(book2);
 //        booklist.add(book3);
 
-        model.addAttribute("name", "糊糊鸭");
+        List<Book> a= libraryService.findAll();
+
+        model.addAttribute("name", a);
         System.out.println("sdf");
         return "hello";
     }
