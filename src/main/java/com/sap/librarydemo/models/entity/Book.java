@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Data
-@Builder
+@NoArgsConstructor
 @Entity
 @Table(name = "book")
 public class Book implements Serializable {

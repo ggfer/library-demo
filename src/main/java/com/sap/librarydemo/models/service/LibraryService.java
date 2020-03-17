@@ -9,9 +9,11 @@ import java.util.List;
 
 public interface LibraryService {
 
-    public List<Book> findAll();
-
     public void save(Book book);
+
+    public void saveAll(List<Book> books);
+
+    public List<Book> findAll();
 
     public Book findOne(Long id);
 

@@ -28,6 +28,14 @@ public class LibraryServiceImpl implements LibraryService {
         bookDao.save(Book);
     }
 
+    @Transactional
+    @Override
+    public void saveAll(List<Book> books) {
+        for (Book book:books) {
+            bookDao.save(book);
+        }
+    }
+
     @Transactional(readOnly=true)
     @Override
     public Book findOne(Long id) {
