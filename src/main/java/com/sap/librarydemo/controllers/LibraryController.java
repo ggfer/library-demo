@@ -82,29 +82,6 @@ public class LibraryController {
     }
 
 
-    @GetMapping(value = "/saveAll",headers = "application/json; charset=utf-8")
-    public @ResponseBody
-    Boolean postFunction5(@RequestBody List<Book> books) throws URISyntaxException {
-        System.out.println(books);
-        try {
-            libraryService.saveAll(books);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return true;
-    }
-
-
-    @GetMapping("/save")
-    public @ResponseBody
-    Boolean postFunction6(@RequestBody Book book) throws URISyntaxException {
-        try {
-            libraryService.save(book);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return true;
-    }
 
 
     @GetMapping("/findAll")

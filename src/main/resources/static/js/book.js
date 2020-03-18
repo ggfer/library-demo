@@ -91,41 +91,7 @@ $(document).ready(function() {
 /**
  * GET Below
  */
-$(document).ready(function() {
-  $('#fun5').click(function() {
-    $.ajax({
-      url: '/saveAll' + fun.dummy,
-      type: 'GET',
-      contentType: 'application/json; charset=utf-8',
-      traditional: true,
-      success: function(result) {
-        $('.show-content').html('done.');
-      },
-      error: function(result) {
-        $('.show-content').html('error.');
-      }
-    });
-  });
-}); /saveAll?ISBN="123123"& 
-
-$(document).ready(function() {
-  $('#fun6').click(function() {
-    $.ajax({
-      url: '/save',
-      type: 'GET',
-      data: JSON.stringify(dummy),
-      dataType: 'json',
-      contentType: 'application/json; charset=utf-8',
-      traditional: true,
-      success: function(result) {
-        $('.show-content').html('done.');
-      },
-      error: function(result) {
-        $('.show-content').html('error.');
-      }
-    });
-  });
-});
+//
 
 $(document).ready(function() {
   $('#fun7').click(function() {

@@ -5,41 +5,55 @@
     <title>Title</title>
     <script src="/js/jquery-3.4.1.min.js"></script>
     <script src="/js/book.js"></script>
+    <script src="/js/library.js"></script>
     <link rel="stylesheet" href="/css/index.css" />
   </head>
   <body>
+    <nav class="navbar">
+      <div class="container">TASK2</div>
+      <strong
+        >这是一个图书馆系统，通过GET/POST请求，实现了最基础的简单存取功能。涉及jQuery、Ajax、Get/Post、SpringBoot、Postgre、MVC、常用注解等相关知识点。</strong
+      >
+    </nav>
     <div class="wrap">
       <div class="left"></div>
       <div class="middle">
-        <div id="middle_header">Task2</div>
-        <div class="post-field">
-          <p>post</p>
-          <p>
-            <button id="fun1">存所有书</button>
-            <button id="fun2">存单本</button>
-          </p>
-          <p>
-            <button id="fun3">取所有书</button>
-            <button id="fun4">取单本</button>
-          </p>
-        </div>
-        <div class="get-field">
-          <p>get</p>
-          <p>
-            <button id="fun5">存所有书</button>
-            <button id="fun6">存单本</button>
-          </p>
-          <p>
-            <button id="fun7">取所有书</button>
-            <button id="fun8">取单本</button>
-          </p>
-        </div>
-        <div class="show-box">
-          <p>结果显示</p>
-          <div class="show-content"></div>
+        <div class="middle-content">
+          <div class="action-box">
+            <div class="post-content">
+              <p>POST</p>
+              <div class="post-content-part-a content-part">
+                <p>
+                  <button id="fun1">存所有书</button>
+                  <button id="fun2">存单本</button>
+                </p>
+              </div>
+              <div class="post-content-part-b content-part">
+                <p>
+                  <button id="fun3">取所有书</button>
+                  <button id="fun4">取单本</button>
+                </p>
+              </div>
+            </div>
+            <div class="get-content">
+              <p>
+                GET
+              </p>
+              <div class="get-content-part-b content-part">
+                <p>
+                  <button id="fun7">取所有书</button>
+                  <button id="fun8">取单本</button>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="show-box">
+            <p>结果显示</p>
+            <div class="show-content"></div>
+          </div>
         </div>
       </div>
-      <div class="right">右侧</div>
+      <div class="right"></div>
     </div>
   </body>
 </html>
